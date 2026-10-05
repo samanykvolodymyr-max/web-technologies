@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 4 - Анкета користувача</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+  <div style="max-width: 600px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h1 style="text-align: center; color: #333;">Завдання 4: Анкета опитування</h1>
+    
+    <form action="#" method="post">
+      <!-- Персональні дані -->
+      <fieldset style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+        <legend style="font-weight: bold; color: #0275d8;">Персональні дані</legend>
+        
+        <p>
+          <label for="fullname">ПІБ:</label><br>
+          <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+        </p>
+        
+        <p>
+          <label for="email">E-mail:</label><br>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+        </p>
+
+        <p>
+          <label for="phone">Номер телефону:</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+        </p>
+
+        <p>
+          <label for="birthdate">Дата народження:</label><br>
+          <input type="date" id="birthdate" name="birthdate" style="padding: 6px; margin-top: 5px;">
+        </p>
+      </fieldset>
+
+      <!-- Додаткова інформація -->
+      <fieldset style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+        <legend style="font-weight: bold; color: #0275d8;">Професійні інтереси</legend>
+
+        <p>Статус / Рівень освіти:</p>
+        <label><input type="radio" name="education" value="school"> Школяр</label><br>
+        <label><input type="radio" name="education" value="student" checked> Студент</label><br>
+        <label><input type="radio" name="education" value="employed"> Працевлаштований</label>
+
+        <p>Які технології вас цікавлять?</p>
+        <label><input type="checkbox" name="skills" value="html"> HTML5 / CSS3</label><br>
+        <label><input type="checkbox" name="skills" value="js"> JavaScript</label><br>
+        <label><input type="checkbox" name="skills" value="python"> Python / Backend</label>
+
+        <p>
+          <label for="experience">Оцініть свій рівень у Web (від 1 до 10):</label><br>
+          <input type="range" id="experience" name="experience" min="1" max="10" value="5" style="width: 100%;">
+        </p>
+
+        <p>
+          <label for="city">Місто проживання:</label><br>
+          <select id="city" name="city" style="padding: 8px; width: 100%; margin-top: 5px;">
+            <option value="kyiv">Київ</option>
+            <option value="lviv">Львів</option>
+            <option value="chernivtsi">Чернівці</option>
+            <option value="odesa">Одеса</option>
+            <option value="other">Інше</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="comments">Про себе / Коментар:</label><br>
+          <textarea id="comments" name="comments" rows="4" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;"></textarea>
+        </p>
+      </fieldset>
+
+      <!-- Кнопки -->
+      <div style="text-align: center;">
+        <input type="submit" value="Надіслати" style="background-color: #5cb85c; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+        <input type="reset" value="Очистити" style="background-color: #d9534f; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">
+      </div>
+    </form>
+
+    <div style="text-align: center; margin-top: 25px;">
+      <a href="../index.html" style="font-size: 16px; color: #0275d8;">Повернутись на головну</a>
+    </div>
+  </div>
+</body>
+</html>
