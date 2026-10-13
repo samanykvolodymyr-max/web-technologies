@@ -1,0 +1,60 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  text-transform: none;
+}
+
+h2 {
+  font-size: 22px;
+  font-style: italic;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+u {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+hr {
+  width: 70%;
+  height: 4px;
+  border: none;
+  background-color: green;
+}
+
+.recipe {
+  width: 700px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: 1px solid #6a5acd;
+  text-align: center;
+}
+
+.footer-note {
+  font-family: Verdana, Geneva, monospace;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+#title {
+  color: red;
+  text-align: center;
+}
