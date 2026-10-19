@@ -1,0 +1,110 @@
+/* Загальні стилі сторінки */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 30px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #0f172a;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 8px;
+}
+
+/* ==========================================
+   Частина 1: box-sizing
+   ========================================== */
+.box-content,
+.box-border {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #2563eb;
+    background-color: #dbeafe;
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+}
+
+.box-content {
+    box-sizing: content-box;
+    /* Загальна ширина: 300 + 2 * 20 + 2 * 5 = 350px */
+}
+
+.box-border {
+    box-sizing: border-box;
+    /* Загальна ширина: 300px */
+}
+
+/* ==========================================
+   Частина 2: overflow
+   ========================================== */
+.ov-visible,
+.ov-hidden,
+.ov-scroll,
+.ov-auto {
+    max-height: 80px;
+    border: 2px solid #059669;
+    background-color: #ecfdf5;
+    margin-bottom: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.ov-visible {
+    overflow: visible;
+}
+
+.ov-hidden {
+    overflow: hidden;
+}
+
+.ov-scroll {
+    overflow: scroll;
+}
+
+.ov-auto {
+    overflow: auto;
+}
+
+/* ==========================================
+   Частина 3: display
+   ========================================== */
+.menu {
+    list-style: none; /* Приховуємо маркери списку */
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline-block; /* Розташування елементів у ряд */
+}
+
+.menu li a {
+    display: block; /* Перетворення посилання на блоковий елемент */
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.menu li a:hover {
+    background-color: #4338ca;
+}
+
+/* Приховування одного з пунктів меню */
+.menu li.hidden-item {
+    display: none;
+    /* 
+      ПОЯСНЕННЯ ВІДМІННОСТЕЙ ПРИХОВУВАННЯ:
+      1. display: none — повністю видаляє елемент із структури (потоку) документа. 
+         Місце під елемент не резервується, сусідні елементи зсуваються.
+      2. visibility: hidden — робить елемент невидимим, але місце в документі 
+         залишається зарезервованим за ним.
+      3. opacity: 0 — робить елемент повністю прозорим, але він залишається в потоці 
+         і продовжує реагувати на події миші (наприклад, кліки).
+    */
+}

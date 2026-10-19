@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №5 - Завдання 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section>
+        <h2>1. Демонстрація властивості box-sizing</h2>
+        
+        <div class="box-content">
+            <strong>content-box</strong><br>
+            Розрахована загальна ширина: 350px (300px width + 20px*2 padding + 5px*2 border).
+        </div>
+
+        <div class="box-border">
+            <strong>border-box</strong><br>
+            Розрахована загальна ширина: 300px (padding та border включені в ширину).
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Демонстрація властивості overflow</h2>
+
+        <div class="ov-visible">
+            <b>overflow: visible</b> — Текст виходить за межі блоку та залишається видимим.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id magna ac erat tincidunt feugiat. Phasellus imperdiet libero ut urna vulputate, nec facilisis quam elementum.
+        </div>
+
+        <div class="ov-hidden">
+            <b>overflow: hidden</b> — Текст, який виходить за межі блоку, приховується.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id magna ac erat tincidunt feugiat. Phasellus imperdiet libero ut urna vulputate, nec facilisis quam elementum.
+        </div>
+
+        <div class="ov-scroll">
+            <b>overflow: scroll</b> — Смуги прокрутки додаються обов'язково.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id magna ac erat tincidunt feugiat. Phasellus imperdiet libero ut urna vulputate, nec facilisis quam elementum.
+        </div>
+
+        <div class="ov-auto">
+            <b>overflow: auto</b> — Смуги прокрутки з'являються тільки за потреби.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id magna ac erat tincidunt feugiat. Phasellus imperdiet libero ut urna vulputate, nec facilisis quam elementum.
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Демонстрація властивості display</h2>
+
+        <ul class="menu">
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li class="hidden-item"><a href="#">Прихований пункт</a></li>
+            <li><a href="#">Послуги</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </section>
+
+</body>
+</html>
