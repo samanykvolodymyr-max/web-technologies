@@ -1,0 +1,99 @@
+.page {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  color: #1f2d3d;
+}
+.nav-list,
+.nav-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  text-decoration: none;
+  color: #cfd8e3;
+}
+.page-title {
+  margin-top: 0;
+}
+.section {
+  min-height: 350px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.section-text {
+  line-height: 1.6;
+}
+
+/* ===== Фіксована вертикальна панель на всю висоту ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 220px;
+  background-color: #1f2d3d;
+  z-index: 100;
+}
+.nav-item {
+  position: relative; /* точка відліку для підменю */
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 52px;
+  padding: 0 18px;
+  transition: background-color 0.2s;
+}
+.nav-text {
+  margin-left: 14px;
+}
+.nav-link:hover,
+.nav-item:hover > .nav-link,
+.nav-item:focus-within > .nav-link {
+  background-color: #3a506b;
+  color: white;
+}
+/* Активний (поточний) пункт */
+.nav-link--active {
+  color: white;
+  box-shadow: inset 4px 0 0 #ffd166;
+}
+
+/* ===== Випадні підменю (до трьох рівнів) ===== */
+.nav-sub {
+  position: absolute;
+  top: 0;
+  left: 100%; /* відкривається праворуч від батьківського пункту */
+  min-width: 200px;
+  background-color: #2b3b4e;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 101;
+}
+.nav-link--sub {
+  height: 44px;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.nav-item:hover > .nav-sub,
+.nav-item:focus-within > .nav-sub {
+  visibility: visible;
+  opacity: 1;
+}
+.nav-item--parent > .nav-link:after {
+  content: '\203A';
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+/* ===== Вміст ===== */
+.content {
+  margin-left: 220px;
+  padding: 20px 30px;
+}

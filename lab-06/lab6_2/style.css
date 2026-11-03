@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  width: 649px;
+  height: 256px;
+  margin: 20px;
+}
+
+/* Блок 1 - завжди видимий */
+.block-1 {
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  box-sizing: border-box;
+  width: 196px;
+  height: 55px;
+  line-height: 51px;
+  text-align: center;
+  background-color: #00b050;
+  border: 2px solid #1a1a1a;
+}
+
+/* Блок 2 - прихований, з'являється при наведенні на Блок 1 */
+.block-2 {
+  position: absolute;
+  top: 3px;
+  left: 222px;
+  box-sizing: border-box;
+  width: 413px;
+  height: 249px;
+  padding-top: 12px;
+  text-align: center;
+  color: white;
+  background-color: #528ed6;
+  border: 2px solid #1a1a1a;
+  /* приховуємо через opacity і visibility, а не display: none */
+  opacity: 0;
+  visibility: hidden;
+  /* невелика затримка при зникненні: час, щоб перевести курсор з Блоку 1 на Блок 2 */
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+.block-1:hover + .block-2,
+.block-2:hover {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* Блок 3 - усередині Блоку 2, з'являється при наведенні на Блок 2 */
+.block-3 {
+  position: absolute;
+  left: 12px;
+  bottom: 15px;
+  box-sizing: border-box;
+  width: 383px;
+  height: 84px;
+  line-height: 80px;
+  text-align: center;
+  color: white;
+  background-color: #644a7a;
+  border: 2px solid #1a1a1a;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+.block-2:hover > .block-3 {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}

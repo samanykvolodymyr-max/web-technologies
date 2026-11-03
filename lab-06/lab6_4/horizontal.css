@@ -1,0 +1,143 @@
+.page {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  color: #1f2d3d;
+}
+.nav-list,
+.nav-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  text-decoration: none;
+  color: #cfd8e3;
+}
+.page-title {
+  margin-top: 0;
+}
+.section {
+  min-height: 350px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.section-text {
+  line-height: 1.6;
+}
+
+/* ===== Фіксована горизонтальна панель ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background-color: #1f2d3d;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+/* clearfix для плаваючих елементів */
+.nav-list:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.nav-item {
+  position: relative; /* точка відліку для абсолютно позиціонованих підменю */
+  float: left;
+}
+/* Останній пункт - праворуч */
+.nav-item--right {
+  float: right;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 56px;
+  padding: 0 18px;
+  transition: background-color 0.2s;
+}
+.nav-link:hover,
+.nav-item:hover > .nav-link,
+.nav-item:focus-within > .nav-link {
+  background-color: #3a506b;
+  color: white;
+}
+/* Активний (поточний) пункт */
+.nav-link--active {
+  color: white;
+  box-shadow: inset 0 -4px 0 #ffd166;
+}
+
+/* ===== Випадні підменю ===== */
+.nav-sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: #2b3b4e;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 101;
+}
+.nav-sub .nav-item {
+  float: none;
+}
+.nav-link--sub {
+  height: 44px;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+/* Третій рівень відкривається праворуч від батьківського пункту */
+.nav-sub .nav-sub {
+  top: 0;
+  left: 100%;
+}
+/* Підменю останнього пункту вирівнюється по правому краю */
+.nav-item--right > .nav-sub {
+  left: auto;
+  right: 0;
+}
+.nav-item:hover > .nav-sub,
+.nav-item:focus-within > .nav-sub {
+  visibility: visible;
+  opacity: 1;
+}
+/* Стрілка біля пунктів підменю, що мають вкладене меню */
+.nav-sub .nav-item--parent > .nav-link:after {
+  content: '\203A';
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+/* ===== Вміст (відступ під фіксовану панель) ===== */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 76px 20px 20px;
+}
+
+/* ===== «Липка» панель ===== */
+.subnav {
+  position: sticky;
+  top: 56px; /* прилипає під фіксованою панеллю */
+  z-index: 50;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #ffd166;
+  border-radius: 8px;
+}
+.subnav-link {
+  margin-right: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1f2d3d;
+}
+.subnav-link:hover {
+  text-decoration: underline;
+}

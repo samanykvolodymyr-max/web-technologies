@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вертикальна навігація</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="vertical.css">
+</head>
+<body class="page">
+    <!-- Фіксована панель на всю висоту вікна -->
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a class="nav-link nav-link--active" href="#"><span class="material-icons">home</span><span class="nav-text">Головна</span></a>
+            </li>
+            <li class="nav-item nav-item--parent">
+                <a class="nav-link" href="#"><span class="material-icons">folder</span><span class="nav-text">Документи</span></a>
+                <ul class="nav-sub">
+                    <li class="nav-item nav-item--parent">
+                        <a class="nav-link nav-link--sub" href="#">Навчання</a>
+                        <ul class="nav-sub">
+                            <li class="nav-item nav-item--parent">
+                                <a class="nav-link nav-link--sub" href="#">Лабораторні</a>
+                                <ul class="nav-sub">
+                                    <li class="nav-item"><a class="nav-link nav-link--sub" href="#">Лаба 5</a></li>
+                                    <li class="nav-item"><a class="nav-link nav-link--sub" href="#">Лаба 6</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link nav-link--sub" href="#">Конспекти</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-link--sub" href="#">Особисті</a></li>
+                </ul>
+            </li>
+            <li class="nav-item nav-item--parent">
+                <a class="nav-link" href="#"><span class="material-icons">bar_chart</span><span class="nav-text">Звіти</span></a>
+                <ul class="nav-sub">
+                    <li class="nav-item"><a class="nav-link nav-link--sub" href="#">Місячні</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link--sub" href="#">Річні</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="material-icons">people</span><span class="nav-text">Користувачі</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="material-icons">settings</span><span class="nav-text">Налаштування</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1 class="page-title">Вертикальна навігація</h1>
+        <p class="section-text">Панель ліворуч зафіксована на всю висоту вікна. Підменю відкриваються праворуч (position: absolute) і мають три рівні вкладеності.</p>
+        <section class="section" id="part1">
+            <h2 class="section-title">Розділ 1</h2>
+            <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia beatae quisquam deserunt voluptatibus magnam dicta harum veniam error repellat ducimus aperiam laboriosam necessitatibus nobis eaque sapiente tempora corporis accusamus unde officia ratione quas rerum.</p>
+        </section>
+        <section class="section" id="part2">
+            <h2 class="section-title">Розділ 2</h2>
+            <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia beatae quisquam deserunt voluptatibus magnam dicta harum veniam error repellat ducimus aperiam laboriosam necessitatibus nobis eaque sapiente tempora corporis accusamus unde officia ratione quas rerum.</p>
+        </section>
+        <section class="section" id="part3">
+            <h2 class="section-title">Розділ 3</h2>
+            <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia beatae quisquam deserunt voluptatibus magnam dicta harum veniam error repellat ducimus aperiam laboriosam necessitatibus nobis eaque sapiente tempora corporis accusamus unde officia ratione quas rerum.</p>
+        </section>
+        <section class="section" id="part4">
+            <h2 class="section-title">Розділ 4</h2>
+            <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia beatae quisquam deserunt voluptatibus magnam dicta harum veniam error repellat ducimus aperiam laboriosam necessitatibus nobis eaque sapiente tempora corporis accusamus unde officia ratione quas rerum.</p>
+        </section>
+    </main>
+</body>
+</html>

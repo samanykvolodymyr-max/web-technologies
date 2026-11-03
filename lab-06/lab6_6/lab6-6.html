@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Попап</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+    <header class="header">
+        <a class="header-link" href="#">Mail</a>
+        <a class="header-link" href="#">Images</a>
+
+        <div class="popup-wrapper">
+            <!-- Прихований, але фокусований checkbox: керує станом попапу -->
+            <input class="popup-toggle" type="checkbox" id="popup-toggle" aria-label="Відкрити або закрити меню">
+            <label class="popup-button" for="popup-toggle"><img class="popup-button-icon" src="img/popup-button.png" alt="Меню додатків"></label>
+
+            <div class="popup">
+                <!-- tabindex="0": контейнер можна прокручувати стрілками з клавіатури -->
+                <div class="popup-scroll" tabindex="0">
+                    <div class="popup-grid">
+                        <a class="item" href="#"><img class="item-icon" src="img/calendar.png" alt=""><span class="item-label">Calendar</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/mail.png" alt=""><span class="item-label">Mail</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/news.png" alt=""><span class="item-label">News</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/maps.png" alt=""><span class="item-label">Map</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/files.png" alt=""><span class="item-label">Files</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/contacts.png" alt=""><span class="item-label">Contacts</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/tanslation.png" alt=""><span class="item-label">Translate</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/videos.png" alt=""><span class="item-label">Videos</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/search.png" alt=""><span class="item-label">Search</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/photos.png" alt=""><span class="item-label">Photo</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/apps.png" alt=""><span class="item-label">Apps</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/documents.png" alt=""><span class="item-label">Document</span></a>
+                    </div>
+                    <div class="popup-divider"></div>
+                    <div class="popup-grid popup-grid--extra">
+                        <a class="item" href="#"><img class="item-icon" src="img/chat.png" alt=""><span class="item-label">Chat</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/classroom.png" alt=""><span class="item-label">Classroom</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/collection.png" alt=""><span class="item-label">Collection</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/mars.png" alt=""><span class="item-label">Mars</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/blogs.png" alt=""><span class="item-label">Blogs</span></a>
+                        <a class="item" href="#"><img class="item-icon" src="img/promo.png" alt=""><span class="item-label">Promos</span></a>
+                    </div>
+                    <a class="popup-more-link" href="#">Even more from Kottans</a>
+                </div>
+                <input class="more-toggle" type="checkbox" id="more-toggle" aria-label="Показати більше іконок">
+                <label class="more-button" for="more-toggle">More</label>
+            </div>
+        </div>
+
+        <a class="bell-link" href="#"><img class="bell-icon" src="img/bell.png" alt="Сповіщення"></a>
+        <span class="avatar"></span>
+    </header>
+
+    <main class="content">
+        <h1 class="content-title">Попап без JavaScript</h1>
+        <p class="content-text">Натисніть на кнопку з крапками у правому верхньому куті. Для керування з клавіатури використовуйте клавішу Tab, Пробіл для відкриття та закриття, стрілки для прокручування.</p>
+    </main>
+</body>
+</html>

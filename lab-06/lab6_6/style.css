@@ -1,0 +1,262 @@
+.page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+/* ===== Шапка ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+.header-link {
+  margin-left: 18px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #444;
+}
+.header-link:hover {
+  text-decoration: underline;
+  color: #000;
+}
+.header-link:focus {
+  outline: 1px solid #a0bdf5;
+  outline-offset: 3px;
+}
+.bell-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+.bell-link:hover {
+  border-color: #ccc;
+}
+.bell-link:focus {
+  border-color: #a0bdf5;
+  outline: none;
+}
+.bell-icon {
+  width: 24px;
+  height: 24px;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5f6b7a, #222);
+}
+
+/* ===== Кнопка попапу ===== */
+.popup-wrapper {
+  position: relative;
+  margin-left: 18px;
+}
+/* checkbox невидимий, але лишається фокусованим (не display: none) */
+.popup-toggle,
+.more-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.popup-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.popup-button:hover {
+  border-color: #ccc;
+}
+.popup-toggle:focus + .popup-button,
+.popup-toggle:checked + .popup-button {
+  border-color: #a0bdf5;
+}
+.popup-button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== Попап ===== */
+.popup {
+  position: absolute;
+  top: 44px;
+  right: -92px;
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* Початковий стан: не видно і не в порядку табуляції */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 10;
+}
+.popup-toggle:checked ~ .popup {
+  visibility: visible;
+  opacity: 1;
+}
+/* Стрілка над попапом: дві накладені трикутники */
+.popup:before,
+.popup:after {
+  content: '';
+  position: absolute;
+  right: 99px;
+  border: 8px solid transparent;
+  border-top-width: 0;
+}
+.popup:before {
+  top: -9px;
+  border-bottom-color: #c6c6c6;
+}
+.popup:after {
+  top: -8px;
+  border-bottom-color: #fff;
+}
+
+/* Прокручуваний контейнер */
+.popup-scroll {
+  box-sizing: border-box;
+  max-height: 440px;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+.popup-scroll:focus {
+  outline: 1px solid #a0bdf5;
+  outline-offset: -1px;
+}
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 10px;
+}
+
+/* ===== Іконки ===== */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  height: 104px;
+  padding-top: 14px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: #444;
+}
+.item:hover {
+  border-color: #dcdcdc;
+}
+.item:focus {
+  border-color: #a0bdf5;
+  outline: none;
+}
+.item-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.item-label {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* ===== Додаткові елементи: приховані до натискання More ===== */
+.popup-divider,
+.popup-grid--extra,
+.popup-more-link {
+  display: none;
+}
+.popup-divider {
+  height: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.popup-more-link {
+  padding: 30px 0 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #444;
+}
+.popup-more-link:hover {
+  text-decoration: underline;
+}
+.popup-more-link:focus {
+  outline: 1px solid #a0bdf5;
+  outline-offset: -4px;
+}
+.popup:has(.more-toggle:checked) .popup-divider,
+.popup:has(.more-toggle:checked) .popup-grid--extra {
+  display: block;
+}
+.popup:has(.more-toggle:checked) .popup-grid--extra {
+  display: grid;
+}
+.popup:has(.more-toggle:checked) .popup-more-link {
+  display: block;
+}
+.popup:has(.more-toggle:checked) .more-button {
+  display: none;
+}
+
+/* ===== Кнопка More ===== */
+.more-toggle {
+  bottom: 0;
+  left: 50%;
+  top: auto;
+}
+.more-button {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+.more-button:hover {
+  background-color: #e8e8e8;
+}
+.more-toggle:focus + .more-button {
+  background-color: #e8e8e8;
+  outline: 1px solid #a0bdf5;
+  outline-offset: -3px;
+}
+
+/* ===== Вміст сторінки ===== */
+.content {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.content-title {
+  color: #3c4043;
+}
+.content-text {
+  line-height: 1.6;
+  color: #5f6368;
+}
