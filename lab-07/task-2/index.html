@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What The Flexbox?! — Практичні макети (Завдання 2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <!-- 1. АДАПТИВНА FLEX-НАВІГАЦІЯ -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Головна навігація">
+        <a href="#top" class="brand">
+          <span class="brand-badge">FX</span>
+          <span>FlexLab</span>
+        </a>
+
+        <ul class="menu-list">
+          <li><a href="#nav-demo" class="menu-link is-active">Навігація</a></li>
+          <li><a href="#cards-demo" class="menu-link">Картки</a></li>
+          <li><a href="#layout-demo" class="menu-link">Сітка додатку</a></li>
+          <li><a href="#practice" class="menu-link">Уроки курсу</a></li>
+        </ul>
+
+        <div class="header-controls">
+          <a href="#practice" class="btn btn-outline">Прогрес</a>
+          <a href="#cards-demo" class="btn btn-primary">Почати</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- 2. ВИРІВНЮВАННЯ КАРТОК ОДНАКОВОЇ ВИСОТИ (align-items: stretch + margin-top: auto) -->
+      <section class="demo-section" id="cards-demo">
+        <div class="section-head">
+          <span class="tag">Урок: Equal Height Columns</span>
+          <h1>Гнучкі картки модулів Flexbox</h1>
+          <p>Демонстрація роботи <code>flex-wrap</code>, <code>flex: 1 1 280px</code> та притискання кнопок до нижнього краю через <code>margin-top: auto</code>.</p>
+        </div>
+
+        <div class="cards-row">
+          <article class="module-card">
+            <div class="card-top">
+              <span class="level-pill">Модуль 01</span>
+              <h2>Осі та напрямки</h2>
+              <p>Робота з головною та поперечною осями, керування напрямком елементів через <code>flex-direction</code> та перенесенням рядків.</p>
+            </div>
+            <ul class="topic-list">
+              <li>display: flex / inline-flex</li>
+              <li>flex-direction: row | column</li>
+              <li>flex-wrap: wrap</li>
+            </ul>
+            <a href="#layout-demo" class="btn btn-primary card-btn">Переглянути приклад</a>
+          </article>
+
+          <article class="module-card is-featured">
+            <div class="card-top">
+              <span class="level-pill">Модуль 02</span>
+              <h2>Вирівнювання простору</h2>
+              <p>Розподіл вільного простору вздовж осей за допомогою <code>justify-content</code>, <code>align-items</code>, <code>align-self</code> та <code>align-content</code> для багаторядкових контейнерів.</p>
+            </div>
+            <ul class="topic-list">
+              <li>justify-content: space-between</li>
+              <li>align-items: center | stretch</li>
+              <li>gap замість зовнішніх margin</li>
+            </ul>
+            <a href="#layout-demo" class="btn btn-primary card-btn">Переглянути приклад</a>
+          </article>
+
+          <article class="module-card">
+            <div class="card-top">
+              <span class="level-pill">Модуль 03</span>
+              <h2>Пропорції flex-елементів</h2>
+              <p>Динамічне розтягування та стискання блоків через скорочену властивість <code>flex: grow shrink basis</code> та зміна порядку через <code>order</code>.</p>
+            </div>
+            <ul class="topic-list">
+              <li>flex-grow та flex-shrink</li>
+              <li>flex-basis та flex: 1</li>
+              <li>Адаптивна перебудова без JS</li>
+            </ul>
+            <a href="#layout-demo" class="btn btn-primary card-btn">Переглянути приклад</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. HOLY GRAIL FLEXBOX LAYOUT (SIDEBARS + MAIN) -->
+      <section class="demo-section" id="layout-demo">
+        <div class="section-head">
+          <span class="tag">Урок: Holy Grail &amp; Reordering</span>
+          <h2>Триколонковий адаптивний макет</h2>
+          <p>На десктопі бічні панелі мають фіксовану базу <code>220px</code>, а центральна зона займає весь вільний простір (<code>flex: 1</code>). На мобільних екранах порядок блоків змінюється через <code>order</code>.</p>
+        </div>
+
+        <div class="holy-grail">
+          <aside class="sidebar-left">
+            <h3>Навігація курсу</h3>
+            <ul>
+              <li>1. Вступ до Flexbox</li>
+              <li>2. Flex-контейнер</li>
+              <li>3. Flex-елементи</li>
+              <li>4. Вирівнювання</li>
+              <li>5. Адаптивне меню</li>
+            </ul>
+          </aside>
+
+          <article class="center-pane">
+            <h3>Основна робоча область</h3>
+            <p>Завдяки властивості <code>flex: 1</code> центральний блок автоматично підлаштовується під ширину вікна браузера. Бічні колонки не стискаються менше заданого розміру (<code>flex: 0 0 220px</code>).</p>
+            <div class="mini-toolbar">
+              <span class="chip">flex-grow: 1</span>
+              <span class="chip">gap: 16px</span>
+              <span class="chip">order: -1 на mobile</span>
+            </div>
+          </article>
+
+          <aside class="sidebar-right">
+            <h3>Нотатки</h3>
+            <p>Для мобільної версії центральний контент піднімається на перше місце за допомогою <code>order: -1</code>.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Лабораторна робота №7 — Завдання 2 (What The Flexbox?!)</p>
+      <p>Саманик Володимир Олегович</p>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* =========================================================
+   1. CSS RESET & VARIABLES (:root)
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --bg-page: #e8eef5;
+  --bg-card: #ffffff;
+  --bg-header: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-on-dark: #f8fafc;
+  --text-muted-dark: #94a3b8;
+  --accent-sky: #38bdf8;
+  --border-light: #e2e8f0;
+  --radius-card: 18px;
+  --pad-card: 26px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================================
+   2. MAIN WEATHER CARD CONTAINER
+   ========================================================= */
+.forecast-card {
+  width: 100%;
+  max-width: 560px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+}
+
+/* =========================================================
+   3. CURRENT WEATHER HEADER (FLEXBOX)
+   ========================================================= */
+.current-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--pad-card);
+  background: var(--bg-header);
+  color: var(--text-on-dark);
+}
+
+.region-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent-sky);
+}
+
+.city-meta h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.today-date,
+.sky-status {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-muted-dark);
+}
+
+.current-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.now-temp-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.now-temp {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.now-temp .deg {
+  font-size: 20px;
+  font-weight: 500;
+  vertical-align: super;
+  color: var(--accent-sky);
+}
+
+.metrics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-muted-dark);
+  text-align: right;
+}
+
+.metrics-list strong {
+  color: var(--text-on-dark);
+  font-weight: 600;
+}
+
+/* =========================================================
+   4. 7-DAY FORECAST ROWS (FLEXBOX)
+   ========================================================= */
+.weekly-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px var(--pad-card) 18px;
+}
+
+.day-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 8px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.2s ease;
+}
+
+.day-item:last-child {
+  border-bottom: none;
+}
+
+.day-item:hover {
+  background-color: #f8fafc;
+}
+
+.day-item.is-today .day-name {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.day-name {
+  flex: 2;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.day-icon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.day-temps {
+  flex: 1.4;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.temp-max {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.temp-min {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.day-extra {
+  flex: 1.6;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+/* =========================================================
+   5. RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+@media (max-width: 460px) {
+  :root {
+    --pad-card: 18px;
+  }
+
+  .current-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metrics-list {
+    text-align: left;
+  }
+
+  .day-extra {
+    display: none;
+  }
+}

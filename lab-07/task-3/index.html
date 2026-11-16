@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прогноз погоди на 7 днів — Flexbox (Завдання 3)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <article class="forecast-card" aria-label="Віджет прогнозу погоди">
+    <!-- Верхній блок поточної погоди -->
+    <header class="current-panel">
+      <div class="city-meta">
+        <span class="region-badge">Україна • Поточний прогноз</span>
+        <h1>Чернівці</h1>
+        <p class="today-date">Понеділок, 16 листопада</p>
+        <p class="sky-status">Мінлива хмарність, без істотних опадів</p>
+      </div>
+
+      <div class="current-summary">
+        <div class="now-temp-box">
+          <img src="icons/partly-cloudy.svg" alt="Мінлива хмарність" width="56" height="56">
+          <span class="now-temp">+11<span class="deg">&deg;C</span></span>
+        </div>
+
+        <ul class="metrics-list">
+          <li><span>Опади:</span> <strong>15%</strong></li>
+          <li><span>Вологість:</span> <strong>68%</strong></li>
+          <li><span>Вітер:</span> <strong>12 км/год ПнЗх</strong></li>
+          <li><span>Тиск:</span> <strong>748 мм рт. ст.</strong></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Список прогнозу на 7 днів на Flexbox -->
+    <section class="weekly-list" aria-label="Прогноз на тиждень">
+      <div class="day-item is-today">
+        <span class="day-name">Сьогодні</span>
+        <div class="day-icon">
+          <img src="icons/partly-cloudy.svg" alt="Мінлива хмарність" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+12&deg;</span>
+          <span class="temp-min">+5&deg;</span>
+        </div>
+        <span class="day-extra">Опади 15%</span>
+      </div>
+
+      <div class="day-item">
+        <span class="day-name">Вівторок</span>
+        <div class="day-icon">
+          <img src="icons/sunny.svg" alt="Сонячно" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+14&deg;</span>
+          <span class="temp-min">+6&deg;</span>
+        </div>
+        <span class="day-extra">Опади 5%</span>
+      </div>
+
+      <div class="day-item">
+        <span class="day-name">Середа</span>
+        <div class="day-icon">
+          <img src="icons/cloudy.svg" alt="Хмарно" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+10&deg;</span>
+          <span class="temp-min">+4&deg;</span>
+        </div>
+        <span class="day-extra">Опади 30%</span>
+      </div>
+
+      <div class="day-item">
+        <span class="day-name">Четвер</span>
+        <div class="day-icon">
+          <img src="icons/rain.svg" alt="Дощ" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+8&deg;</span>
+          <span class="temp-min">+3&deg;</span>
+        </div>
+        <span class="day-extra">Опади 85%</span>
+      </div>
+
+      <div class="day-item">
+        <span class="day-name">П’ятниця</span>
+        <div class="day-icon">
+          <img src="icons/storm.svg" alt="Гроза" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+9&deg;</span>
+          <span class="temp-min">+4&deg;</span>
+        </div>
+        <span class="day-extra">Опади 90%</span>
+      </div>
+
+      <div class="day-item">
+        <span class="day-name">Субота</span>
+        <div class="day-icon">
+          <img src="icons/partly-cloudy.svg" alt="Мінлива хмарність" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+11&deg;</span>
+          <span class="temp-min">+4&deg;</span>
+        </div>
+        <span class="day-extra">Опади 20%</span>
+      </div>
+
+      <div class="day-item">
+        <span class="day-name">Неділя</span>
+        <div class="day-icon">
+          <img src="icons/sunny.svg" alt="Ясно" width="32" height="32">
+        </div>
+        <div class="day-temps">
+          <span class="temp-max">+13&deg;</span>
+          <span class="temp-min">+5&deg;</span>
+        </div>
+        <span class="day-extra">Опади 10%</span>
+      </div>
+    </section>
+  </article>
+
+</body>
+</html>
