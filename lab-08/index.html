@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №8 — Основи CSS Grid Layout</title>
+  <link rel="stylesheet" href="common/reset.css">
+  <link rel="stylesheet" href="common/variables.css">
+  <style>
+    .hub {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: var(--gap-lg);
+    }
+    .hub__header {
+      margin-bottom: var(--gap-lg);
+      padding-bottom: var(--gap-md);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .hub__title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .hub__subtitle {
+      color: var(--color-text-muted);
+    }
+    .hub__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--gap-md);
+    }
+    .hub-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--gap-md);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-sm);
+    }
+    .hub-card__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .hub-card__desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .hub-card__links {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap-xs);
+    }
+    .hub-card__link {
+      padding: 8px 12px;
+      background-color: var(--color-primary);
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .hub-card__link:hover {
+      background-color: var(--color-primary-hover);
+    }
+    .hub-card__link--alt {
+      background-color: #475569;
+    }
+    .hub-card__link--alt:hover {
+      background-color: #334155;
+    }
+  </style>
+</head>
+<body>
+  <main class="hub">
+    <header class="hub__header">
+      <h1 class="hub__title">Лабораторна робота №8: Основи CSS Grid Layout</h1>
+      <p class="hub__subtitle">Навігація по виконаних завданнях відповідно до методичних вказівок</p>
+    </header>
+
+    <section class="hub__grid">
+      <article class="hub-card">
+        <h2 class="hub-card__title">Завдання 1 та 2 (Скріншоти)</h2>
+        <p class="hub-card__desc">
+          Папки <code>task-1/</code> (CSS Grid Garden) та <code>task-2/</code> (курс CSS Grid + код уроків) підготовлені для додавання твоїх скріншотів.
+        </p>
+      </article>
+
+      <article class="hub-card">
+        <h2 class="hub-card__title">Завдання 3 — Галерея фотографій</h2>
+        <p class="hub-card__desc">
+          Двовимірна сітка фотографій із медіазапитами для ширин 768px та 576px.
+        </p>
+        <div class="hub-card__links">
+          <a class="hub-card__link" href="task-3-even/index.html">Парний варіант</a>
+          <a class="hub-card__link hub-card__link--alt" href="task-3-odd/index.html">Непарний варіант</a>
+        </div>
+      </article>
+
+      <article class="hub-card">
+        <h2 class="hub-card__title">Завдання 4 — Сторінка з картками</h2>
+        <p class="hub-card__desc">
+          Адаптивні картки зі захистом від переповнення контенту (768px та 576px).
+        </p>
+        <div class="hub-card__links">
+          <a class="hub-card__link" href="task-4-even/index.html">Парний варіант</a>
+          <a class="hub-card__link hub-card__link--alt" href="task-4-odd/index.html">Непарний варіант</a>
+        </div>
+      </article>
+
+      <article class="hub-card">
+        <h2 class="hub-card__title">Завдання 5 — Mobile-first Layout</h2>
+        <p class="hub-card__desc">
+          Адаптивна сітка (header, navigation, main, sidebar, ads, footer) двома способами.
+        </p>
+        <div class="hub-card__links">
+          <a class="hub-card__link" href="task-5/method-1-lines/index.html">Column grids + rows</a>
+          <a class="hub-card__link hub-card__link--alt" href="task-5/method-2-areas/index.html">grid-template-areas</a>
+        </div>
+      </article>
+
+      <article class="hub-card">
+        <h2 class="hub-card__title">Завдання 6 — Деревовидна структура</h2>
+        <p class="hub-card__desc">
+          28 блоків із нумерацією через CSS generated content (<code>counter()</code>).
+        </p>
+        <div class="hub-card__links">
+          <a class="hub-card__link" href="task-6-even/index.html">Парний варіант</a>
+          <a class="hub-card__link hub-card__link--alt" href="task-6-odd/index.html">Непарний варіант</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* Завдання 4: Сторінка з картками — Для парних номерів */
+.cards-wrapper {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--gap-lg);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-auto-rows: minmax(360px, auto);
+  gap: var(--gap-md);
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.card--featured {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.card__media {
+  height: 155px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.card__media--featured {
+  height: 280px;
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Захист від переповнення контенту картки */
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: var(--gap-md);
+  font-family: var(--font-serif);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--gap-sm);
+  color: var(--color-text);
+}
+
+.card__subtitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: var(--gap-xs) 0 var(--gap-sm);
+  color: var(--color-text);
+}
+
+.card__diagram {
+  margin-bottom: var(--gap-sm);
+  border: 1px solid #efefef;
+  padding: 4px;
+}
+
+.card__text {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #333333;
+  margin-bottom: var(--gap-md);
+  max-height: 14em;
+  overflow-y: auto;
+}
+
+.card__btn {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 14px;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color var(--transition-fast);
+}
+
+.card__btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+/* Адаптивність для планшетів (768px) */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    padding: var(--gap-md);
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .card--featured {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+/* Адаптивність для мобільних пристроїв (576px) */
+@media (max-width: 576px) {
+  .cards-wrapper {
+    padding: var(--gap-sm);
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

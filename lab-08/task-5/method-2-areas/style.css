@@ -1,0 +1,63 @@
+/* Завдання 5 (Спосіб 2): Mobile-first layout через grid-template-areas */
+body {
+  background-color: var(--color-layout-bg);
+}
+
+.page-layout {
+  max-width: var(--container-max);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--gap-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto minmax(260px, 1fr) auto auto auto;
+  grid-template-areas:
+    "header"
+    "navigation"
+    "main"
+    "sidebar"
+    "ads"
+    "footer";
+  gap: var(--gap-sm);
+}
+
+.box {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-layout-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--gap-sm) var(--gap-md);
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.box--header { grid-area: header; }
+.box--navigation { grid-area: navigation; }
+.box--main { grid-area: main; }
+.box--sidebar { grid-area: sidebar; }
+.box--ads { grid-area: ads; }
+.box--footer { grid-area: footer; }
+
+@media (min-width: 768px) {
+  .page-layout {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header  header"
+      "navigation navigation"
+      "sidebar main"
+      "ads     footer";
+    gap: var(--gap-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-layout {
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header  header     header"
+      "sidebar navigation ads"
+      "sidebar main       ads"
+      "footer  footer     footer";
+  }
+}

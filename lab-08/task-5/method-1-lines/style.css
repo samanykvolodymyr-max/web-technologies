@@ -1,0 +1,60 @@
+/* Завдання 5 (Спосіб 1): Mobile-first layout через column grids + rows */
+body {
+  background-color: var(--color-layout-bg);
+}
+
+.page-layout {
+  max-width: var(--container-max);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--gap-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto minmax(260px, 1fr) auto auto auto;
+  gap: var(--gap-sm);
+}
+
+.box {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-layout-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--gap-sm) var(--gap-md);
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.box--header { grid-column: 1 / 2; grid-row: 1 / 2; }
+.box--navigation { grid-column: 1 / 2; grid-row: 2 / 3; }
+.box--main { grid-column: 1 / 2; grid-row: 3 / 4; }
+.box--sidebar { grid-column: 1 / 2; grid-row: 4 / 5; }
+.box--ads { grid-column: 1 / 2; grid-row: 5 / 6; }
+.box--footer { grid-column: 1 / 2; grid-row: 6 / 7; }
+
+@media (min-width: 768px) {
+  .page-layout {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: var(--gap-md);
+  }
+
+  .box--header { grid-column: 1 / 3; grid-row: 1 / 2; }
+  .box--navigation { grid-column: 1 / 3; grid-row: 2 / 3; }
+  .box--sidebar { grid-column: 1 / 2; grid-row: 3 / 4; }
+  .box--main { grid-column: 2 / 3; grid-row: 3 / 4; }
+  .box--ads { grid-column: 1 / 2; grid-row: 4 / 5; }
+  .box--footer { grid-column: 2 / 3; grid-row: 4 / 5; }
+}
+
+@media (min-width: 1024px) {
+  .page-layout {
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .box--header { grid-column: 1 / 4; grid-row: 1 / 2; }
+  .box--sidebar { grid-column: 1 / 2; grid-row: 2 / 4; }
+  .box--navigation { grid-column: 2 / 3; grid-row: 2 / 3; }
+  .box--main { grid-column: 2 / 3; grid-row: 3 / 4; }
+  .box--ads { grid-column: 3 / 4; grid-row: 2 / 4; }
+  .box--footer { grid-column: 1 / 4; grid-row: 4 / 5; }
+}

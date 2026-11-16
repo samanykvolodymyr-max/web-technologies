@@ -1,0 +1,39 @@
+/* CSS-змінні (Custom Properties) — Вимога №2 до звіту */
+:root {
+  /* Шрифти */
+  --font-main: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  /* Кольори */
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-text: #22252a;
+  --color-text-muted: #5a6069;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-btn-bg: #808080;
+  --color-btn-hover: #666666;
+  --color-btn-text: #ffffff;
+  --color-border: #dcdcdc;
+
+  /* Акцентні кольори для макетів */
+  --color-layout-accent: #e05a47;
+  --color-layout-bg: #fff8f7;
+  --color-tree-block: #f4d03f;
+  --color-tree-block-hover: #f1c40f;
+  --color-tree-text: #ffffff;
+
+  /* Відступи та сітка */
+  --gap-xs: 8px;
+  --gap-sm: 12px;
+  --gap-md: 18px;
+  --gap-lg: 24px;
+  --container-max: 1280px;
+
+  /* Оформлення карток та фото */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-photo: 0 2px 8px rgba(0, 0, 0, 0.22);
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.14);
+  --transition-fast: 0.2s ease;
+}
